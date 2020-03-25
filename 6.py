@@ -46,8 +46,7 @@ print ("===============[KICKER 4 LOGIN SUKSES]===============\n")
 kicker5 = LINE('')
 print ('++ Auth Token : %s' % kicker5.authToken)
 print ("===============[KICKER 5 LOGIN SUKSES]===============\n")
-g1 = LINE('')
-#print ("===============[ GHOST LOGIN SUKSES]===============\n")
+
 print ("Login usaptatan1983!!")
 
 myMid = line.profile.mid
@@ -63,7 +62,7 @@ Emid = kicker5.getProfile().mid
 g1MID = g1.getProfile().mid
 KAC = [line,kicker,kicker2,kicker3,kicker3,kicker5]
 ABC = [kicker,kicker2,kicker3,kicker3,kicker5]
-Bots = [myMid,Amid,Bmid,Cmid,Dmid,Emid,g1MID]
+Bots = [myMid,Amid,Bmid,Cmid,Dmid,Emid]
 Ariff = creator + admin + owner + staff + Bots
 programStart = time.time()
 oepoll = OEPoll(line)
@@ -76,7 +75,6 @@ protectinvite = []
 protectcancel = []
 protectcanceljs = []
 protectantijs = []
-ghost = []
 zxcvzx = myMid
 with open('protectcancel.json', 'r') as fp:
     protectcancel = json.load(fp)
@@ -265,16 +263,16 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         line.sendMessage(to, 'กำลังรีสตาร์ท♪')
         settings['restartPoint'] = to
         restartProgram()
-    elif cmd == 'help':
+    elif cmd == 'h':
         line.sendReplyMessage(msg_id, to, help())
-    elif cmd == 'helpbot':
+    elif cmd == 'hb':
         line.sendReplyMessage(msg_id, to, helpbot())
-    elif cmd == 'speed':
+    elif cmd == 'sp':
         start = time.time()
         line.sendMessage(to, 'Checking speed')
         elapse = time.time() - start
         line.sendMessage(to, ' %s seconds' % str(elapse))
-    elif cmd == 'me':
+    elif cmd == 'มี':
         line.sendContact(to, myMid)
     elif cmd == 'runtime':
         runtime = time.time() - programStart
@@ -360,12 +358,12 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
     elif cmd == "addall":
         if wait["selfbot"] == True:
             if msg._from in admin:
-                clfr = [Amid,Bmid,Cmid,Dmid,Emid,g1MID]
-                kkfr = [myMid,Bmid,Cmid,Dmid,Emid,g1MID]#ki=Amid
-                aafr = [myMid,Amid,Cmid,Dmid,Emid,g1MID]#kk=Bmid
-                abfr = [myMid,Amid,Bmid,Dmid,Emid,g1MID]#kc=Cmid
-                acfr = [myMid,Amid,Bmid,Cmid,Emid,g1MID]#km=Dmid
-                adfr = [myMid,Amid,Bmid,Cmid,Dmid,g1MID]#kb=Emid
+                clfr = [Amid,Bmid,Cmid,Dmid,Emid]
+                kkfr = [myMid,Bmid,Cmid,Dmid,Emid]#ki=Amid
+                aafr = [myMid,Amid,Cmid,Dmid,Emid]#kk=Bmid
+                abfr = [myMid,Amid,Bmid,Dmid,Emid]#kc=Cmid
+                acfr = [myMid,Amid,Bmid,Cmid,Emid]#km=Dmid
+                adfr = [myMid,Amid,Bmid,Cmid,Dmid]#kb=Emid
                 aefr = [myMid,Amid,Bmid,Cmid,Dmid]#kb=Emid                
                 for addcl in clfr:
                     line.findAndAddContactsByMid(addcl)
@@ -385,9 +383,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                 for addkb in adfr:
                     kicker5.findAndAddContactsByMid(addkb)
                 kicker5.sendMessage(to," Add ✓")
-                for addkbe in aefr:
-                    g1.findAndAddContactsByMid(addkbe)
-                g1.sendMessage(to," Add ✓")
+
     elif text.lower() == 'เปลี่ยนวีดีโอ':
       if wait["selfbot"] == True:		
         if msg._from in admin:						  
@@ -396,7 +392,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
             video = line.downloadFileURL("https://www.saveoffline.com/get/?i=2she2Ctb02rA7GAkqP3UUPGRIE62OMtN&u=BaJCG5AmHn1RLtTKBT1JbX5d23u4mqxV", saveAs="video.mp4")
             changeVideoAndPictureProfile(picture, video)
             line.sendMessage(to, "เปลี่ยนเรียบร้อย")	
-    elif cmd == "respon":
+    elif cmd == "5":
       if wait["selfbot"] == True:
         if msg._from in admin:
             try: 
@@ -407,7 +403,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                 kicker5.sendMessage(msg.to,responsename5)
             except Exception as e:
                 line.sendMessage(msg.to,"เกิดข้อผิดพลาด\n" +str(e))      
-    elif cmd == "!in":
+    elif cmd == "ดึง5":
       if wait["selfbot"] == True:   
         if msg._from in admin:
             try:
@@ -420,17 +416,8 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                 kicker5.acceptGroupInvitation(msg.to)								
             except Exception as e:
                 line.sendMessage(msg.to,"เกิดข้อผิดพลาด\n" +str(e))   
-    elif cmd == "antijs stay":
-      if wait["selfbot"] == True:
-        if msg._from in admin:
-            try:
-                ginfo = line.getCompactGroup(msg.to)
-                line.inviteIntoGroup(msg.to, [g1MID])
-                line.sendMessage(msg.to,"Group 「"+str(ginfo.name)+"」 ทำการเปิดใช้งานโหมดป้องกันJS")
-            except Exception as e:
-                line.sendMessage(msg.to,"เกิดข้อผิดพลาด\n" +str(e))
     
-    elif cmd == "!join":
+    elif cmd == "in5":
         if wait["selfbot"] == True:
             if msg._from in admin:        
                 if msg.toType == 2:
@@ -453,7 +440,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                     time.sleep(0.008)                      
                     G.preventedJoinByTicket = True                  
                     random.choice(ABC).updateGroup(G)
-    elif cmd == "!out":
+    elif cmd == "out5":
       if wait["selfbot"] == True:
         if msg._from in admin:
             G = line.getCompactGroup(msg.to)
@@ -463,47 +450,24 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
             kicker3.leaveGroup(msg.to)
             kicker4.leaveGroup(msg.to)
             kicker5.leaveGroup(msg.to)		
-    elif cmd == "kicker join":
-        if msg._from in admin:
-            G = line.getCompactGroup(msg.to)
-            ginfo = line.getCompactGroup(msg.to)
-            G.preventedJoinByTicket = False
-            line.updateGroup(G)
-            invsend = 0
-            Ticket = line.reissueGroupTicket(msg.to)
-            g1.acceptGroupInvitationByTicket(msg.to,Ticket)
-            G = g1.getCompactGroup(msg.to)
-            G.preventedJoinByTicket = True
-            g1.updateGroup(G)
 
-    elif cmd == "kicker bye":
-        if msg._from in admin:
-            G = line.getCompactGroup(msg.to)
-            g1.leaveGroup(msg.to)
-
-    elif cmd == "speedbot":
+    elif cmd == "sp5":
       if wait["selfbot"] == True:
         if msg._from in admin:
             start = time.time()
             kicker.sendMessage(to, "กำลังทดสอบ")          
             elapsed_time = time.time() - start
-            kicker.sendMessage("u47d41cc45c4576282d0c52ce4d5b5856", ".")
-            elapsed_time = time.time() - start
             kicker.sendMessage(msg.to, "[ %s Seconds ] " % (elapsed_time))
             start = time.time()
-            kicker2.sendMessage("u47d41cc45c4576282d0c52ce4d5b5856", ".")
             elapsed_time = time.time() - start            
             kicker2.sendMessage(msg.to, "[ %s Seconds ] " % (elapsed_time))  
             start = time.time()
-            kicker3.sendMessage("u47d41cc45c4576282d0c52ce4d5b5856", ".")
             elapsed_time = time.time() - start                 
             kicker3.sendMessage(msg.to, "[ %s Seconds ] " % (elapsed_time))
             start = time.time()
-            kicker4.sendMessage("u47d41cc45c4576282d0c52ce4d5b5856", ".")
             elapsed_time = time.time() - start            
             kicker4.sendMessage(msg.to, "[ %s Seconds ] " % (elapsed_time)) 
             start = time.time()
-            kicker5.sendMessage("u47d41cc45c4576282d0c52ce4d5b5856", ".")
             elapsed_time = time.time() - start                
             kicker5.sendMessage(msg.to, "[ %s Seconds ] " % (elapsed_time))
 #===========Protection============#
@@ -638,65 +602,11 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                 else:
                      msgs = "ป้องกันเชิญถูกปิดใช้งานอยู่แล้ว"
                 line.sendMessage(msg.to, "「STATUS PROTECT CANCEL」\n" + msgs)
+          
 
-    elif 'Antijs ' in msg.text:
+    elif 'pro ' in msg.text:
        if msg._from in admin:
-          spl = msg.text.replace('Antijs ','')
-          if spl == 'on':
-              if msg.to in protectantijs:
-                   msgs = "ป้องกันJSถูกเปิดใช้งานอยู่แล้ว"
-              else:
-                   protectantijs[msg.to] = True
-                   f=codecs.open('protectantijs.json','w','utf-8')
-                   json.dump(protectantijs, f, sort_keys=True, indent=4,ensure_ascii=False)									   
-                   ginfo = line.getCompactGroup(msg.to)
-                   msgs = "ป้องกันJSเปิดใช้งาน\nIn Group : " +str(ginfo.name)
-              line.sendMessage(msg.to, "「STATUS PROTECT JS」\n" + msgs)
-          elif spl == 'off':
-                if msg.to in protectantijs:
-                     del protectantijs[msg.to]
-                     f=codecs.open('protectantijs.json','w','utf-8')
-                     json.dump(protectantijs, f, sort_keys=True, indent=4,ensure_ascii=False)												 
-                     ginfo = line.getCompactGroup(msg.to)
-                     msgs = "ป้องกันJSปิดใช้งาน\nIn Group : " +str(ginfo.name)
-                else:
-                     msgs = "ป้องกันJSถูกปิดใช้งานอยู่แล้ว"
-                line.sendMessage(msg.to, "「STATUS PROTECT JS」\n" + msgs)
-    elif "whois " in msg.text.lower():
-        spl = re.split("whois ",msg.text,flags=re.IGNORECASE)
-        if spl[0] == "":
-            msg.contentType = 13
-            msg.text = None
-            msg.contentMetadata = {"mid":spl[1]}
-            line.sendMessage(msg.to,text = None,contentMetadata = {"mid":spl[1]},contentType = 13)
-                
-    elif 'Ghost ' in msg.text:
-       if msg._from in admin:
-          spl = msg.text.replace('Ghost ','')
-          if spl == 'on':
-              if msg.to in ghost:
-                   msgs = "เปิดใช้งานโหมด Ghost"
-              else:
-                   ghost[msg.to] = True
-                   f=codecs.open('ghost.json','w','utf-8')
-                   json.dump(ghost, f, sort_keys=True, indent=4,ensure_ascii=False)									   
-                   ginfo = line.getCompactGroup(msg.to)
-                   msgs = "เปิดใช้งานโหมด Ghost\nIn Group : " +str(ginfo.name)
-              line.sendMessage(msg.to, "「STATUS PROTECT JS」\n" + msgs)
-          elif spl == 'off':
-                if msg.to in ghost:
-                     del ghost[msg.to]
-                     f=codecs.open('ghost.json','w','utf-8')
-                     json.dump(ghost, f, sort_keys=True, indent=4,ensure_ascii=False)												 
-                     ginfo = line.getCompactGroup(msg.to)
-                     msgs = "ปิดใช้งานโหมด Ghost\nIn Group : " +str(ginfo.name)
-                else:
-                     msgs = "ปิดใช้งานโหมด Ghost"
-                line.sendMessage(msg.to, "「STATUS PROTECT JS」\n" + msgs)            
-
-    elif 'Semua pro ' in msg.text:
-       if msg._from in admin:
-          spl = msg.text.replace('Semua pro ','')
+          spl = msg.text.replace('pro ','')
           if spl == 'on':
               if msg.to in protectqr:
                    msgs = ""
@@ -879,7 +789,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                     if res.startswith('\n'): res = res[1:]
                     line.sendMessage(to, res)
                 res = ''
-        elif cond[0].lower() == 'reset':
+        elif cond[0].lower() == 'รี5':
             filee = open('errorLog.txt', 'w')
             filee.write('')
             filee.close()
@@ -2397,13 +2307,13 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                 if res.startswith('\n'): res = res[1:]
                 line.sendMessage(to, res)
             res = ''
-    elif cmd == 'openqr':
+    elif cmd == 'เปิดลิ้ง':
         if msg.toType != 2: return line.sendMessage(to, 'ไม่สามารถเปิดลิ้งกลุ่มได้\nคำสั่งนี้ใช้ได้ในกลุ่มเท่านั้น')
         group = line.getCompactGroup(to)
         group.preventedJoinByTicket = False
         line.updateGroup(group)
         line.sendMessage(to, 'เปิดลิ้งกลุ่มแล้ว')
-    elif cmd == 'closeqr':
+    elif cmd == 'ปิดลิ้ง':
         if msg.toType != 2: return line.sendMessage(to, 'ไม่สามารถเปิดลิ้งกลุ่มได้\nคำสั่งนี้ใช้ได้ในกลุ่มเท่านั้น')
         group = line.getCompactGroup(to)
         group.preventedJoinByTicket = True
@@ -2614,7 +2524,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                 line.sendMessage(to, 'เปลี่ยนข้อความทักคนออกกลุ่มเป็น `%s`' % texts)
         else:
             line.sendMessage(to, parsingRes(res).format_map(SafeDict(key=setKey.title())))
-    elif cmd.startswith('kick '):
+    elif cmd.startswith('k '):
         if msg.toType != 2: return line.sendMessage(to, 'คำสั่งนี้ใช้ได้เฉพาะในกลุ่มเท่านั้น')
         if 'MENTION' in msg.contentMetadata.keys():
             mentions = ast.literal_eval(msg.contentMetadata['MENTION'])
