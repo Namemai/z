@@ -51,10 +51,10 @@ g1 = LINE('')
 print ("Login usaptatan1983!!")
 
 myMid = line.profile.mid
-creator = ["uda8195e53e6c6e17f3f745743e477100"]
-owner = ["uda8195e53e6c6e17f3f745743e477100"]
-admin = ["uda8195e53e6c6e17f3f745743e477100"]
-staff = ["uda8195e53e6c6e17f3f745743e477100"]
+creator = ["uc66e45201d1612eb4ce7b3a86bac4685"]
+owner = ["uc66e45201d1612eb4ce7b3a86bac4685"]
+admin = ["uc66e45201d1612eb4ce7b3a86bac4685"]
+staff = ["uc66e45201d1612eb4ce7b3a86bac4685"]
 Amid = kicker.getProfile().mid
 Bmid = kicker2.getProfile().mid
 Cmid = kicker3.getProfile().mid
