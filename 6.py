@@ -28,21 +28,25 @@ botStart = time.time()
 
 # Login line
 line = LINE('EPvzSEqjymbeEgllC6n2.sg9Izcl+/YM4kMsM/KGxuG.dQYi4djtlcjyI4vSBCT4C40XHHpcqjWmA22rqdBhHag=')
-print ("Login Succes")
-print ("===============[ADMIN LOGIN]===============\n")
 print ('++ Auth Token : %s' % line.authToken)
+print ("===============[ADMIN LOGIN]===============\n")
+
 kicker = LINE('EPxmYYxrjuGBgPEZv9s0.eIjotsSgrqsPZOlBuUViia.GFAWy3HvH+kSr7H+huRMs5DEn9GBfwviGpFddtSouzk=')
 print ('++ Auth Token : %s' % kicker.authToken)
 print ("===============[KICKER LOGIN NOSELF TOKEN]===============\n")
+
 kicker2 = LINE('EP3tIrHokXhP2nHL9Xjd.We4zmQsffJ/LAJeph+IUlq.sw6DxFEy/R7hY5wnC5QaWHunnLsOcoHVpoMg141L4/U=')
 print ('++ Auth Token : %s' % kicker2.authToken)
 print ("===============[KICKER 2 LOGIN SUKSES]===============\n")
+
 kicker3 = LINE('EP0CHhlEULRuUxWa7IH1.Qq04Hnpanlfw2DDzoPOjGq.8OenL3AxNLhc8db+WXPPslreKAxD+YsyTh66hBVRCZI=')
 print ('++ Auth Token : %s' % kicker3.authToken)
 print ("===============[KICKER 3 LOGIN SUKSES]===============\n")
+
 kicker4 = LINE('EPmFxETpKPBK2bdg0XO4.n5rlPR2IqQ1ur+7TelBiva.33RZtSGnAUWrBUMRjfe+LrCoLqxkCo2FqWEQxUg48Xo=')
 print ('++ Auth Token : %s' % kicker4.authToken)
 print ("===============[KICKER 4 LOGIN SUKSES]===============\n")
+
 kicker5 = LINE('EP6ooetshsn12kikfSZ2.UMPDuU92uGOsP/Jsly168G.A4jEofaquMWcyjHQIPOMLsCpUPV97GX5v3zp/TFVImo=')
 print ('++ Auth Token : %s' % kicker5.authToken)
 print ("===============[KICKER 5 LOGIN SUKSES]===============\n")
