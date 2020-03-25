@@ -51,8 +51,6 @@ kicker5 = LINE('EP6ooetshsn12kikfSZ2.UMPDuU92uGOsP/Jsly168G.A4jEofaquMWcyjHQIPOM
 print ('++ Auth Token : %s' % kicker5.authToken)
 print ("===============[KICKER 5 LOGIN SUKSES]===============\n")
 
-print ("Login usaptatan1983!!")
-
 myMid = line.profile.mid
 creator = ["uc66e45201d1612eb4ce7b3a86bac4685"]
 owner = ["uc66e45201d1612eb4ce7b3a86bac4685"]
@@ -118,8 +116,6 @@ settings["myProfile"]["coverId"] = coverId
 
 # Check Json Data
 def restartProgram():
-print ("Login usaptatan1983!!")
-#print ('##----- PROGRAM RESTARTED -----##')
     python = sys.executable
     os.execl(python, python, *sys.argv)
 
