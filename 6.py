@@ -444,12 +444,13 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
       if wait["selfbot"] == True:
         if msg._from in admin:
             G = line.getCompactGroup(msg.to)
-            kicker.sendMessage(msg.to, "Bye bye fams "+str(G.name))
+            kicker.sendMessage(msg.to, "Bye "+str(G.name))
             kicker.leaveGroup(msg.to)
             kicker2.leaveGroup(msg.to)
             kicker3.leaveGroup(msg.to)
             kicker4.leaveGroup(msg.to)
-            kicker5.leaveGroup(msg.to)		
+            kicker5.leaveGroup(msg.to)
+            line.leaveGroup(msg.to)
 
     elif cmd == "sp5":
       if wait["selfbot"] == True:
