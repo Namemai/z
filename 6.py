@@ -1,13 +1,15 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- 
+import linepy
+from linepy import *
 from akad.ttypes import *
 from multiprocessing import Pool, Process
-from datetime import datetime
 from time import sleep
+import pytz, datetime, pafy, time, timeit, random, sys, ast, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, wikipedia
+from datetime import timedelta, date
+from datetime import datetime
 from bs4 import BeautifulSoup
-from humanfriendly import format_timespan, format_size, format_number, format_length
-import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib.request, urllib.parse, urllib.error, urllib.parse,antolib,subprocess,unicodedata,GACSender
-from gtts import gTTS
 from googletrans import Translator
+import youtube_dl
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
